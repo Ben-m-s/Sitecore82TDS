@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  website:
+    volumes:
+      - ..\storage\website\:C:\Sitecore\Website
