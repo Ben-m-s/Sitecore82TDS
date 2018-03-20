@@ -6,5 +6,3 @@ services:
     build:
       context: .\src\Website
       dockerfile: Dockerfile
-    volumes:
-      - .\storage\Data\:C:\Sitecore\Data

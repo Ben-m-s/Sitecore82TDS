@@ -14,6 +14,3 @@ RUN Expand-Archive -Path 'C:\Sitecore*rev*.zip' -DestinationPath 'C:'; `
     Remove-Item -Path 'C:\Sitecore *rev*' -Recurse -Force;
 
 COPY DataFolder.config \Sitecore\Website\App_Config\Include
-
-# Add license file at the end to avoid changing license to invalidate previous steps in the Docker cache
-COPY license.xml \Sitecore\Data
