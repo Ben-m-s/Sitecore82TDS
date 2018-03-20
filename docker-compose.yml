@@ -4,5 +4,7 @@ services:
   website:
     image: website
     build:
-      context: .\Website
+      context: .\src\Website
       dockerfile: Dockerfile
+    volumes:
+      - .\storage\Data\:C:\Sitecore\Data

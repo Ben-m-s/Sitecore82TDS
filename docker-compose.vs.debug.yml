@@ -2,5 +2,7 @@ version: '3'
 
 services:
   website:
+    build:
+      dockerfile: Debug.Dockerfile
     volumes:
-      - ..\storage\website\:C:\Sitecore\Website
+      - .\storage\Website\:C:\Sitecore\Website

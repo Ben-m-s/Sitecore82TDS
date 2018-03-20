@@ -3,9 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{3C9ABF3F-A549-4FED-82D9-4CC772E23618}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "src\Website\Website.csproj", "{3C9ABF3F-A549-4FED-82D9-4CC772E23618}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D08CE595-EF8E-4BF1-8D45-2703EBAB3988}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{312664B9-F143-4D47-A52C-4A993CC5FDB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sitecore-8-base", "sitecore-8-base", "{1DC4B576-F5E2-4F60-9755-83E55488BE25}"
+	ProjectSection(SolutionItems) = preProject
+		images\sitecore-8-base\.dockerignore = images\sitecore-8-base\.dockerignore
+		images\sitecore-8-base\Dockerfile = images\sitecore-8-base\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sitecore-82rev161221", "sitecore-82rev161221", "{7F374811-1529-4475-A901-FCAA6900A4DC}"
+	ProjectSection(SolutionItems) = preProject
+		images\sitecore-82rev161221\.dockerignore = images\sitecore-82rev161221\.dockerignore
+		images\sitecore-82rev161221\Dockerfile = images\sitecore-82rev161221\Dockerfile
+	EndProjectSection
+EndProject
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "SampleSite.Master", "src\SampleSite.Master\SampleSite.Master.scproj", "{529F4965-8982-4398-B64D-29895E1B2A39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +37,19 @@ Global
 		{D08CE595-EF8E-4BF1-8D45-2703EBAB3988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D08CE595-EF8E-4BF1-8D45-2703EBAB3988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D08CE595-EF8E-4BF1-8D45-2703EBAB3988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529F4965-8982-4398-B64D-29895E1B2A39}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1DC4B576-F5E2-4F60-9755-83E55488BE25} = {312664B9-F143-4D47-A52C-4A993CC5FDB7}
+		{7F374811-1529-4475-A901-FCAA6900A4DC} = {312664B9-F143-4D47-A52C-4A993CC5FDB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3662B2A7-85E9-4647-9E54-5AA4A782C67D}
