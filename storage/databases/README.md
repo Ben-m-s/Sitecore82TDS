@@ -1,0 +1,1 @@
+This folder will be mapped to the SQL container's "Data" (databases) folder. It will contain the Sitecore databases

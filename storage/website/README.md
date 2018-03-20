@@ -1,0 +1,1 @@
+This folder will replace the container's "Website" folder during development. It will contain Sitecore files.
