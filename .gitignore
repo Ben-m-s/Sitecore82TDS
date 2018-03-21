@@ -262,3 +262,4 @@ __pycache__/
 /storage/
 /images/sitecore-82rev161221/Sitecore*.zip
 license.xml
+/src/Website/Properties/PublishProfiles/LocalDevContainer.pubxml
