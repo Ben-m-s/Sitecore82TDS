@@ -164,7 +164,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalDevContainer.pubxml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
