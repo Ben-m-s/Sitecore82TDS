@@ -36,34 +36,37 @@ hub.docker.com, Azure Contaner Registry or an internal one, so that images can b
 Unfortunately it has to be **private** repositories due to Sitecore licensing terms so we can't share images in the community.
 
 1. Clone [this repository](https://github.com/Ben-m-s/Sitecore82TDS.git) into a folder such as “C:\Docker\Sitecore82TDS” (next steps will asume this folder has been used):
-1. Copy "Sitecore 8.2 rev. 161221.zip" into “c:\Docker\Sitecore82TDS\images\sitecore-82rev161221“
-1. Copy license.xml into "c:\Docker\Sitecore82TDS\storage\Data\“
-1. Copy the database files (*.mdf and *.ldf) from "Sitecore 8.2 rev. 161221.zip" into "c:\Docker\Sitecore82TDS\storage\Databases\“
-1. Copy The "Website" folder files from "Sitecore 8.2 rev. 161221.zip" into "c:\Docker\Sitecore82TDS\storage\Website“
+1. Copy "**Sitecore 8.2 rev. 161221.zip**" into “c:\Docker\Sitecore82TDS\\**images\sitecore-82rev161221**“
+1. Copy "**license.xml**" into "c:\Docker\Sitecore82TDS\\**storage\Data**“
+1. Copy the database files (*.mdf and *.ldf) from "**Sitecore 8.2 rev. 161221.zip**" into "c:\Docker\Sitecore82TDS\\**storage\Databases**“
+1. Copy The "Website" folder files from "**Sitecore 8.2 rev. 161221.zip**" into "c:\Docker\Sitecore82TDS\\**storage\Website**“
 1. Open VS2017 as Administrator
-1. Open the solution “c:\Docker\Sitecore82TDS\Sitecore82TDS.sln”
+1. Open the solution “c:\Docker\Sitecore82TDS\\**Sitecore82TDS.sln**”
 1. Open a PowerShell console as Administrator.
-1. Run the script “c:\Docker\Sitecore82TDS\Build.ps1”
-1. Copy file “c:\Docker\Sitecore82TDS\src\Website\Properties\PublishProfiles\LocalDevContainer.pubxml.example” as “LocalDevContainer.pubxml”
-1. Edit the Publication settings for the project “Website”. Set the Target Location to “C:\Docker\Sitecore82TDS\storage\website”
+1. Build base images by running the folliwing PowerShell script:
+    ```text
+    .\Build.ps1
+    ```
+1. Copy file “c:\Docker\Sitecore82TDS\src\Website\Properties\PublishProfiles\\**LocalDevContainer.pubxml.example**” as “**LocalDevContainer.pubxml**”
+1. Edit the Publication settings "**LocalDevContainer**" for the project “Website”. Set the Target Location to “C:\Docker\Sitecore82TDS\\**storage\website**”
 1. Build the solution.
-1. Publish the Website project to the local folder "c:\Docker\Sitecore82TDS\storage\Website“
-1. Make sure the project “docker-compose” is set as StartUp project
-1. Run the containers in “Debug” mode. The browser will open with Sitecore’s home page.
-1. Copy the container’s IP in the “c:\Windows\System32\drivers\etc\hosts” file with the URL: sitecore82tds.dev.local
-1. With VS2017, edit the properties of the TDS project “SampleSite.Master”.
-   1. Select tab “Build”
-   1. Check the checkbox “Edit user specific configuration (.user file)”
+1. Publish the Website project to the local folder "c:\Docker\Sitecore82TDS\\**storage\Website**“
+1. Make sure the project “**docker-compose**” is set as StartUp project
+1. Run the containers with “**Debug**” configuration. The browser will open with Sitecore’s home page.
+1. Copy the container’s IP in the “c:\Windows\System32\drivers\etc\\**hosts**” file with the URL: **sitecore82tds.dev.local**
+1. With VS2017, edit the properties of the TDS project “**SampleSite.Master**”.
+   1. Select tab “**Build**”
+   1. Check the checkbox “**Edit user specific configuration (.user file)**”
    1. Set the following values in the text boxes:
       1. Sitecore Web Url: “http://sitecore82tds.dev.local”
       1. Sitecore Deploy Folder: "c:\Docker\Sitecore82TDS\storage\Website“
-   1. Check the checkbox “Install Sitecore Connector”. A guid should appear in the “Sitecore Access Guid” field
-   1. Click the “Test” button to confirm the connection works
+   1. Check the checkbox “**Install Sitecore Connector**”. A guid should appear in the “Sitecore Access Guid” field
+   1. Click the “**Test**” button to confirm the connection works
    1. Save the project.
-1. Deploy the TDS project “SampleSite.Master”
+1. Deploy the TDS project “**SampleSite.Master**”
 1. Browse to “http://sitecore82tds.dev.local/sitecore/shell”
 1. Login with “admin” and “b”
-1. Browse to “/sitecore/content/Home”. Confirm there is a child page deployed by TDS.
+1. Browse to “**/sitecore/content/Home**”. Confirm there is a child page deployed by TDS.
 
 ## Debugging Sitecore in a Container
 
