@@ -5,7 +5,8 @@ The project "https://github.com/pbering/SockerVS2017", published by Per Bering, 
 This proposal aims to add the following enhancements:
 
  - Example for a TDS project in the solution
- - Ability to access the Website folder in the container at debugging time (with VS2017). This folder is embedded in the container in the Release configuration for easier deployment.
+ - Ability to access the "Website" folder in the container at debugging time (with VS2017). This folder is embedded in the container in the Release configuration for easier deployment.
+ - Simplicity: Avoid the need of a Synchronisation mecanism to update the "Website" folder with VS2017 while developing.
  - Support for specialized (slightly different) containers at debugging time.
    - Ability to persist all content of the Data folder (not only log and serialization files)
  - Performance improvements.
@@ -19,6 +20,8 @@ The following features are shared with Per's solution:
 - Build, re-build, clear builds/stops/starts compose services (containers)
 - Optional Visual Studio automatic pull, build, and run of necessary container images in the background.
 
+[This repository](https://github.com/Ben-m-s/SockerVS2017) is a fork from Per's orginal with the required changes to support the advantages proposed here.
+
 ## Prerequisites
 
 - Windows 10 Fall Creators Update
@@ -26,14 +29,14 @@ The following features are shared with Per's solution:
 - Visual Studio 2017 15.5.7 or later
 
 
-## DEVELOPMENT ENVIRONMENT SETUP
+## Development environment Setup
 
->NOTE: Base images are build and consumed locally in this example, but in a real life scenario you would also push to an remote private repository like
-hub.docker.com, quay.io or an internal one, so that images can be shared within your organization.
+>NOTE: Base images are built and consumed locally in this example, but in a real life scenario you would also push to a remote private repository like
+hub.docker.com, Azure Contaner Registry or an internal one, so that images can be shared within your organization.
 Unfortunately it has to be **private** repositories due to Sitecore licensing terms so we can't share images in the community.
 
-1. Clone [this repository](https://github.com/Ben-m-s/Sitecore82TDS.git) into a folder such as “C:\Docker\Sitecore82TDS” (next step will asume this folder has been used):
-1. Copy Sitecore 8.2 rev. 161221.zip into “c:\Docker\Sitecore82TDS\images\sitecore-82rev161221“
+1. Clone [this repository](https://github.com/Ben-m-s/Sitecore82TDS.git) into a folder such as “C:\Docker\Sitecore82TDS” (next steps will asume this folder has been used):
+1. Copy "Sitecore 8.2 rev. 161221.zip" into “c:\Docker\Sitecore82TDS\images\sitecore-82rev161221“
 1. Copy license.xml into "c:\Docker\Sitecore82TDS\storage\Data\“
 1. Copy the database files (*.mdf and *.ldf) from "Sitecore 8.2 rev. 161221.zip" into "c:\Docker\Sitecore82TDS\storage\Databases\“
 1. Copy The "Website" folder files from "Sitecore 8.2 rev. 161221.zip" into "c:\Docker\Sitecore82TDS\storage\Website“
@@ -62,7 +65,7 @@ Unfortunately it has to be **private** repositories due to Sitecore licensing te
 1. Login with “admin” and “b”
 1. Browse to “/sitecore/content/Home”. Confirm there is a child page deployed by TDS.
 
-## DEBUGING SITECORE IN A CONTAINER
+## Debugging Sitecore in a Container
 
 1. Browse to “http://sitecore82tds.dev.local”. Notice the customisation that shows the computer name on the home page.
 1. Attach to the running container
